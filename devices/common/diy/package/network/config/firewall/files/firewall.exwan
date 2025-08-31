@@ -7,7 +7,7 @@ config_add_list() { uci add_list "$1=$2"; }
 config_delete() { uci -q delete "$1"; }
 config_commit() { uci commit "$1"; }
 
-# 检查列表是否包含元素  
+# 检查列表是否包含元素
 list_contains() {
     local value="$1"; shift
     echo "$@" | grep -q -w "$value"
