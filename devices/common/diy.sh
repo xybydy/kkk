@@ -36,6 +36,8 @@ git_clone_path master https://github.com/immortalwrt/immortalwrt package/libs/op
 
 rm -rf feeds/kiddin9/my-default-settings
 git_clone_path master https://github.com/xybydy/kwrt-packages my-default-settings
+echo "FFF" 
+pwd
 mv -f my-default-settings feeds/kiddin9/
 
 
