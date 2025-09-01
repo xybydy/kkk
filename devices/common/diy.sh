@@ -35,9 +35,7 @@ rm -rf package/libs/openssl package/network/services/ppp
 git_clone_path master https://github.com/immortalwrt/immortalwrt package/libs/openssl package/network/services/ppp
 
 rm -rf feeds/kiddin9/my-default-settings
-git_clone_path master https://github.com/xybydy/kwrt-packages my-default-settings
-echo "FFF" 
-pwd
+git_clone_path main https://github.com/xybydy/kwrt-packages my-default-settings
 mv -f my-default-settings feeds/kiddin9/
 
 
