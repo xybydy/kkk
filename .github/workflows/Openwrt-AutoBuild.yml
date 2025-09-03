@@ -17,6 +17,7 @@ on:
         required: true
         default: "armsr_armv8"
       ssh:
+        description: 'ssh'
         type: boolean
         default: false
 
@@ -224,9 +225,9 @@ jobs:
           fi
           cp -Rf ./diy/* ./ || true
 
-      # - name: SSH connection to Actions
-      #   uses: kiddin9/debugger-action@master
-      #   if: ${{github.event.inputs.ssh}} == 'true'
+      - name: SSH connection to Actions
+        uses: kiddin9/debugger-action@master
+        if: github.event.inputs.ssh == 'true'
 
       - name: Apply patches
         run: |
