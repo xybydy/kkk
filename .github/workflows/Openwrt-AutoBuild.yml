@@ -279,10 +279,6 @@ jobs:
           fi
           df -hT
 
-      # - name: SSH connection to Actions
-      #   uses: kiddin9/debugger-action@master
-      #   if: ${{github.event.inputs.ssh}}
-
       # - name: Download Packages
       #   id: package_download
       #   run: |
