@@ -104,16 +104,16 @@ jobs:
             fi
           fi
 
-      - name: Trigger Packages Update
-        continue-on-error: true
-        run: |
-          status=$(curl -H "Authorization: token ${{ secrets.TOKEN_WRT }}" -s "https://api.github.com/repos/xybydy/kwrt-packages/actions/runs" | jq -r '.workflow_runs[0].status')
-          if [[ "$status" == "completed" ]]; then
-            curl -X POST https://api.github.com/repos/xybydy/kwrt-packages/dispatches \
-              -H "Accept: application/vnd.github.everest-preview+json" \
-              -H "Authorization: token ${{ secrets.TOKEN_WRT }}" \
-            --data '{"event_type": "update"}'
-          fi
+      # - name: Trigger Packages Update
+      #   continue-on-error: true
+      #   run: |
+      #     status=$(curl -H "Authorization: token ${{ secrets.TOKEN_WRT }}" -s "https://api.github.com/repos/xybydy/kwrt-packages/actions/runs" | jq -r '.workflow_runs[0].status')
+      #     if [[ "$status" == "completed" ]]; then
+      #       curl -X POST https://api.github.com/repos/xybydy/kwrt-packages/dispatches \
+      #         -H "Accept: application/vnd.github.everest-preview+json" \
+      #         -H "Authorization: token ${{ secrets.TOKEN_WRT }}" \
+      #       --data '{"event_type": "update"}'
+      #     fi
 
       - name: Free disk space
         uses: coder-xiaomo/free-disk-space@main
