@@ -106,7 +106,6 @@ jobs:
 
       - name: Trigger Packages Update
         continue-on-error: true
-        if: contains(github.event.action, 'pkg')
         run: |
           status=$(curl -H "Authorization: token ${{ secrets.TOKEN_WRT }}" -s "https://api.github.com/repos/xybydy/kwrt-packages/actions/runs" | jq -r '.workflow_runs[0].status')
           if [[ "$status" == "completed" ]]; then
